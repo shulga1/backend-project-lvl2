@@ -1,0 +1,36 @@
+{
+  "name": "backend-project-lvl2",
+  "version": "1.0.0",
+  "description": "A utility that looks for differences in configuration files",
+  "bin": {
+    "gendiff": "bin/gendiff.js"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shulga1/backend-project-lvl2.git"
+  },
+  "keywords": [
+    "utility",
+    "json",
+    "yaml",
+    "ini",
+    "differences",
+    "config",
+    "files",
+    "configuration"
+  ],
+  "author": "Yuriy Shulga",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shulga1/backend-project-lvl2/issues"
+  },
+  "homepage": "https://github.com/shulga1/backend-project-lvl2#readme",
+  "type": "module",
+  "dependencies": {
+    "commander": "^6.1.0"
+  }
+}
