@@ -1,6 +1,5 @@
 import fs from 'fs';
 import path from 'path';
-import process from 'process';
 import _ from 'lodash';
 
 const { union, has } = _;
@@ -24,7 +23,7 @@ const getDifferences = (obj1, obj2, keys) => {
     }
   });
 
-  result.push('}')
+  result.push('}');
 
   return result.join('\n');
 };
@@ -37,7 +36,7 @@ const gendiff = (file1, file2) => {
     fs.readFileSync(path1);
     fs.readFileSync(path2);
   } catch (err) {
-    return `No such file(s)`;
+    return 'No such file(s)';
   }
 
   const obj1 = JSON.parse(fs.readFileSync(path1, 'utf8'));
