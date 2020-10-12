@@ -1,4 +1,4 @@
-name: hexlet-check
+name: build
 
 on:
   push:
@@ -11,5 +11,26 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Hexlet project check
+      - name: ubuntu
         uses: hexlet/project-action@release
+    
+    strategy:
+      # Node versions list
+      matrix:
+        node-version: [14.x]
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '14'
+
+      - name: npm install, build
+        
+        run: npm install
+
+      - name: Run linter
+        # Run Linter
+        run: |
+          make lint
