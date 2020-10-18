@@ -6,8 +6,11 @@
     "gendiff": "bin/gendiff.js"
   },
   "main": "index.js",
+  "engines": {
+    "node": ">=14"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx -n --experimental-vm-modules jest"
   },
   "repository": {
     "type": "git",
@@ -28,15 +31,23 @@
   "bugs": {
     "url": "https://github.com/shulga1/backend-project-lvl2/issues"
   },
-  "homepage": "https://github.com/shulga1/backend-project-lvl2#readme",
   "type": "module",
+  "jest": {
+    "testEnvironment": "node",
+    "transform": {}
+  },
+  "homepage": "https://github.com/shulga1/backend-project-lvl2#readme",
   "dependencies": {
     "commander": "^6.1.0",
     "lodash": "^4.17.20"
   },
   "devDependencies": {
+    "@jest/globals": "^26.5.3",
     "eslint": "^7.11.0",
     "eslint-config-airbnb-base": "^14.2.0",
-    "eslint-plugin-import": "^2.22.1"
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.1.0",
+    "jest": "^26.5.3",
+    "jest-cli": "^26.5.3"
   }
 }
