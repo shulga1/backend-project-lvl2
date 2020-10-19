@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import _ from 'lodash';
+import parser from './src/parsers.js';
 
 const { union, has } = _;
 
@@ -39,8 +40,9 @@ const gendiff = (file1, file2) => {
     return 'No such file(s)';
   }
 
-  const obj1 = JSON.parse(fs.readFileSync(path1, 'utf8'));
-  const obj2 = JSON.parse(fs.readFileSync(path2, 'utf8'));
+  const obj1 = parser(path1);
+  const obj2 = parser(path2);
+
   const keys = union(Object.keys(obj1), Object.keys(obj2)).sort();
 
   return getDifferences(obj1, obj2, keys);

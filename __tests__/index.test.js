@@ -16,3 +16,24 @@ test('json files', () => {
   const result = readFile('jsonResult').trim();
   expect(gendiff(before, after)).toBe((result));
 });
+
+test('yml files', () => {
+  const before = getFixturePath('before.yml');
+  const after = getFixturePath('after.yml');
+  const result = readFile('jsonResult').trim();
+  expect(gendiff(before, after)).toBe((result));
+});
+
+test('No such file 1', () => {
+  const before = getFixturePath('wrongFile.json');
+  const after = getFixturePath('after.json');
+  const result = 'No such file(s)';
+  expect(gendiff(before, after)).toBe(result);
+});
+
+test('No such file 2', () => {
+  const before = getFixturePath('before.yml');
+  const after = getFixturePath('wrongFile.yml');
+  const result = 'No such file(s)';
+  expect(gendiff(before, after)).toBe(result);
+});
